@@ -7,12 +7,14 @@ function setLiveBanner() {
     xhttp.onreadystatechange = function() {
         if (this.readyState === 4 && this.status === 200) {
             var json = JSON.parse(this.responseText);
+            var text = document.getElementById("live-text");
+            
             if (json.online == true) {
-                document.getElementById("live-text").style.backgroundColor = "red";
-                document.getElementById("live-text").innerHTML = "I'm live on Picarto, click here to watch!";
+                text.style.backgroundColor = "red";
+                text.innerHTML = "I'm live on Picarto, click here to watch!";
             } else {
-                document.getElementById("live-text").style.backgroundColor = "#1da456";
-                document.getElementById("live-text").innerHTML = "Come visit my stream on Picarto?";
+                text.style.backgroundColor = "#1da456";
+                text.innerHTML = "Come visit my stream on Picarto?";
             }
         }
     };
